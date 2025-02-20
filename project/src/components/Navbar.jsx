@@ -47,7 +47,7 @@ const Navbar = () => {
             className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent cursor-pointer"
             onClick={() => scrollTo('home')}
           >
-            Portfolio
+            RJ
           </motion.span>
           <div className="hidden md:flex space-x-8">
             {['Home', 'Projects', 'Skills', 'About', 'Contact'].map((item) => (

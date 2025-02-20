@@ -88,11 +88,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, Mail, Phone } from 'lucide-react';
+// import handleDownload from '../Public/download'
 
 const Hero = () => {
+
+  // <handleDownload/>
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '../Public/Resume.pdf'; // Ensure the resume is placed in the public folder
+    link.href = 'https://drive.google.com/file/d/1hKpnTHMQ_IyR1QpOilYnNeFqpSxH6H6w/view?usp=sharing'; // Ensure the resume is placed in the public folder
     link.download = 'Jatin_Rajvani_Resume.pdf';
     document.body.appendChild(link);
     link.click();
