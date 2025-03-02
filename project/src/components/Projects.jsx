@@ -4,12 +4,13 @@ import { Github, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Homy',
-    description: 'Accommodation & Services Platform',
-    image: 'https://res.cloudinary.com/doqzxuxb1/image/upload/v1739942957/ezkwfhgbsnoxg1o9y2bp.png',
-    github: 'https://github.com/jatinrajvani/homy',
-    live: 'https://homy-demo.com',
-    tags: ['React', 'Node.js', 'MongoDB']
+    title: "Homy",
+    description: "Accommodation & Services Platform",
+    image: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1739942957/ezkwfhgbsnoxg1o9y2bp.png",
+    github: "https://github.com/jatinrajvani/homy",
+    live: "https://homy-demo.com",
+    tags: [
+      { name: "Homy", videoId: "1h7gEIqnDdYA8gAHApOY-VPsXtlOEphW0" }, ],
   },
   {
     title: 'Tata Motors Static Clone',
@@ -84,16 +85,27 @@ const Projects = () => {
                 {project.title}
               </h3>
               <p className="text-gray-400 mb-4">{project.description}</p>
+
+
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="text-sm px-3 py-1 bg-gray-700/50 rounded-full text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+  {project.tags.map((tag, tagIndex) => (
+    <div key={tagIndex} className="text-sm px-3 py-1 bg-gray-700/50 rounded-lg text-gray-300">
+
+      {/* Embed the video only if videoId is not null */}
+      {tag.videoId && (
+        <iframe
+          src={`https://drive.google.com/file/d/${tag.videoId}/preview`}
+          width="390"
+          height="300"
+          frameBorder="0"
+          allow="autoplay"
+          allowFullScreen
+        ></iframe>
+      )}
+    </div>
+  ))}
+</div>
+
               <div className="flex gap-4">
                 <motion.a
                   whileHover={{ scale: 1.1 }}
